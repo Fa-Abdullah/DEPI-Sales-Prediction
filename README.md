@@ -1,35 +1,35 @@
 # DEPI Sales Prediction – 8 ML Models + EDA + Feature Engineering
 
-Full sales prediction pipeline (Regression) using 8 different models with comprehensive EDA and feature engineering.
+Sales prediction pipeline using 8 regression models on a retail sales dataset.
 
-## 📊 Dataset
+## Dataset
 
-- Sales dataset (Excel)
+- Source: Sales Dataset (Excel file)
+- Target variable: Sales
 - Features: Orders, Products, Customers, Dates, Sales, Profit, Discount
-- Target: `Sales` (log‑transformed)
 
-## 🧹 Preprocessing
+## Preprocessing
 
-- Handle missing values (median for numeric, mode for categorical)
-- Drop unnecessary columns (IDs, Names, Dates)
-- One‑Hot Encoding for categorical variables
-- Log transformation (`log1p`) for Sales (reduces skewness)
+- Missing values: median for numeric columns, mode for categorical columns
+- Dropped columns: Row ID, Order ID, Customer ID, Customer Name, Product ID, Product Name, Order Date, Ship Date
+- One-Hot Encoding for categorical variables
+- Log transformation (log1p) applied to Sales to reduce skewness
 
-## 📈 Exploratory Analysis
+## Feature Engineering
 
-- Sales distribution (before & after log)
+- Profit Margin = Profit / Sales
+- Sales_log = log1p(Sales)
+
+## Exploratory Data Analysis
+
+- Sales distribution before and after log transformation
 - Missing values heatmap
 - Correlation heatmap
-- Average Sales by Category
-- Average Profit by Segment
-- Profit boxplot (outlier check)
+- Average sales by category
+- Average profit by segment
+- Profit boxplot for outlier detection
 
-## ⚙️ Feature Engineering
-
-- **Profit Margin** = Profit / Sales
-- **Sales_log** = log1p(Sales)
-
-## 🤖 Models (8 total)
+## Models
 
 1. Linear Regression
 2. XGBoost (tuned)
@@ -37,6 +37,7 @@ Full sales prediction pipeline (Regression) using 8 different models with compre
 4. Random Forest
 5. KNN
 6. SVM
-7. Ridge Regression (with Polynomial Features)
-8. Lasso Regression (with Polynomial Features)
+7. Ridge Regression with Polynomial Features
+8. Lasso Regression with Polynomial Features
+
 
